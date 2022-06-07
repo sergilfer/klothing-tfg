@@ -1,0 +1,10 @@
+@include tablet {
+    .contenido-ropa {
+        @include grid (2, 2rem);
+    }
+
+    .precio-tallas{
+        @include grid(2, 2rem);
+    }
+}
+

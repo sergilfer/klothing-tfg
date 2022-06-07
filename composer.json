@@ -1,0 +1,16 @@
+{
+    "name": "sergi/tfg",
+    "description": "TFG",
+    "type": "project",
+    "authors": [{
+        "name": "Sergio Gil Fernandez"
+    }],
+    "require": {
+        "intervention/image": "^2.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "./classes"
+        }
+    }
+}

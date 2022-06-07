@@ -1,0 +1,14 @@
+.galeria-principal{
+    img{
+        width:720px;
+        height:480x;
+        display: block;
+        margin: auto;
+       }
+      
+}
+
+
+.prueba2{
+    @include grid(2, 3rem);
+}

@@ -1,0 +1,40 @@
+Programas Usados:
+
+-   Visual Studio Code
+    -   Extensiones de VS CODE:
+        -   Beautify (ayuda a identar codigo de html, js, css)
+        -   Dracula Official (cambia theme del vscode para no dejarse los ojos en el proyecto)
+        -   Live Server (servidor de vscode para probar codigo html, css, js, antes de tener el servidor apache montado y en funcionamiento, mas comodo a la hora de realizar el front)
+        -   PHP Debug (sirve para debugear codigo en php, pudiendo abrir el studio code desde la terminal de JAVASCRIPT debug Terminal y asi poder poner puntos de ruptura, para poder saber donde estan los fallos)
+        -   PHP Intelephense (ayuda a identar el codigo en php)
+        -   PHP IntelliSense (ayuda autocompletar codigo php)
+
+-   Apache (programa utilizado para montar el servidor para que funcione la web)
+
+-   MySQL (programa utilizado para crear la db)
+
+- Laragon (programa que utilizo para iniciar tanto el servidor de apache, como el de mysql, mirar mas info)
+
+-   Windows Powershell (maybe no hace falta meterlo, solo usado para instalar otros programas y cambiar algun tipo de config)
+
+-   POSTMAN (llamadas a la API)
+
+-   Google Chrome (navegador utilizado para pag)
+
+-   DRAW.IO (Creacion de Esquema de la db)
+
+
+Lenguajes Usados:
+
+-   HTML
+
+-   CSS (SASS)
+
+-   JAVASCRIPT (JS, GULP)
+
+-   PHP
+
+
+¿Frameworks Utilizados?
+
+- GULP, Node, 
