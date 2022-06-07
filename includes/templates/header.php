@@ -17,30 +17,34 @@ $auth = $_SESSION['logueado'] ?? null;
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TFG</title>
-    <link rel="stylesheet" href="/tfg/build/css/app.css" />
+    <link rel="stylesheet" href="/klothing-tfg/build/css/app.css" />
 </head>
 
 <body>
     <header class="header inicio">
-        <div class="contenedor contenido-header">
-            <a href="/tfg/index.php">
-                <h1 class="title">MODAMS</h1>
+        <div class="contenedor contenido-header ">
+            <a href="/klothing-tfg/index.php">
+                <picture class="imagen-header">
+                    <source srcset="/klothing-tfg/build/img/logos/klothing.webp" type="image/webp" />
+                    <source srcset="/klothing-tfg/build/img/items/klothing.jpg" type="image/jpeg" />
+                    <img loading="lazy" src="/klothing-tfg/build/items/klothing.jpg" alt="anuncio" />
+                </picture>
             </a>
 
             <div class="mobile-menu">
                 <picture>
-                    <source srcset="/tfg/build/img/items/menu.webp" type="image/webp" />
-                    <source srcset="/tfg/build/img/items/menu.jpg" type="image/jpeg" />
-                    <img loading="lazy" src="/tfg/build/items/menu.jpg" alt="anuncio" />
+                    <source srcset="/klothing-tfg/build/img/items/menu.webp" type="image/webp" />
+                    <source srcset="/klothing-tfg/build/img/items/menu.jpg" type="image/jpeg" />
+                    <img loading="lazy" src="/klothing-tfg/build/items/menu.jpg" alt="anuncio" />
                 </picture>
             </div>
             <div class="derecha">
                 <nav class="navegacion">
-                    <a href="/tfg/nosotros.php">Nosotros</a>
-                    <a href="/tfg/hombre.php">Hombre</a>
-                    <a href="/tfg/mujer.php">Mujer</a>
-                    <a href="/tfg/marcas.php">Marcas</a>
-                    <a href="/tfg/contacto.php">Contacto</a>
+                    <a href="/klothing-tfg/nosotros.php">Nosotros</a>
+                    <a href="/klothing-tfg/hombre.php">Hombre</a>
+                    <a href="/klothing-tfg/mujer.php">Mujer</a>
+                    <a href="/klothing-tfg/marcas.php">Marcas</a>
+                    <a href="/klothing-tfg/contacto.php">Contacto</a>
                     <?php if ($auth) : ?>
                         <a href="cerrar-sesion.php">Cerrar Sesión</a>
                     <?php endif; ?>

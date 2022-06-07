@@ -13,7 +13,7 @@ function isLogged()
 {
     session_start();
     if (!$_SESSION['logueado']) {
-        header('Location: /tfg/index.php');
+        header('Location: /klothing-tfg/index.php');
     }
 }
 

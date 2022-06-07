@@ -27,6 +27,8 @@
         align-items: center;
     }
 
+
+
     .navegacion {
         @include tablet {
             display: flex;
@@ -49,4 +51,12 @@
             }
         }
     }
+
+    .imagen-header{
+        img {
+            max-width: 50%;
+            max-height: 20px;
+        }
+    }
 }
+

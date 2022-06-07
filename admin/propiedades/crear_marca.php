@@ -58,7 +58,7 @@ if (empty($campos_vacios)) {
     $resultado = mysqli_query($db, $query);
 
     if ($resultado) {
-        header('Location: /tfg/admin?codeURL=4');
+        header('Location: /klothing-tfg/admin?codeURL=4');
     }
 }
 
@@ -74,7 +74,7 @@ incluirTemplates('header');
         </div>
     <?php endforeach; ?>
 
-    <form class="formulario" method="POST" action="/tfg/admin/propiedades/crear_marca.php" enctype="multipart/form-data">
+    <form class="formulario" method="POST" action="/klothing-tfg/admin/propiedades/crear_marca.php" enctype="multipart/form-data">
 
         <fieldset>
             <legend>Informacion General</legend>

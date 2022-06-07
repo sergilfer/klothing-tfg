@@ -68,7 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if ($resultado) {
             // Redireccionar al usuario.
-            header('Location: /tfg/admin?resultado=1');
+            header('Location: /klothing-tfg/admin?resultado=1');
         }
     }
 }
@@ -85,7 +85,7 @@ incluirTemplates('header');
         </div>
     <?php endforeach; ?>
 
-    <form class="formulario" method="POST" action="/tfg/admin/propiedades/crear_ropa.php" enctype="multipart/form-data">
+    <form class="formulario" method="POST" action="/klothing-tfg/admin/propiedades/crear_ropa.php" enctype="multipart/form-data">
         <?php include '../../includes/templates/formulario_ropa.php'; ?>
 
         <input type="submit" value="Crear" class="boton boton-verde">

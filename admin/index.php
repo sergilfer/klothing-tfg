@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $resultado = mysqli_query($db, $query);
 
         if ($resultado) {
-            header('Location: /tfg/admin?codeURL=3');
+            header('Location: /klothing-tfg/admin?codeURL=3');
         }
     }
 }

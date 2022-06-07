@@ -4,4 +4,4 @@ session_start();
 
 $_SESSION = [];
 
-header('Location: /tfg/index.php');
+header('Location: /klothing-tfg/index.php');
