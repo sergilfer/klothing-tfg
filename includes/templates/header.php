@@ -41,12 +41,14 @@ $auth = $_SESSION['logueado'] ?? null;
             <div class="derecha">
                 <nav class="navegacion">
                     <a href="/klothing-tfg/nosotros.php">Nosotros</a>
-                    <a href="/klothing-tfg/hombre.php">Hombre</a>
-                    <a href="/klothing-tfg/mujer.php">Mujer</a>
+                    <a href="/klothing-tfg/hombre.php?genero=Hombre">Hombre</a>
+                    <a href="/klothing-tfg/hombre.php?genero=Mujer">Mujer</a>
                     <a href="/klothing-tfg/marcas.php">Marcas</a>
                     <a href="/klothing-tfg/contacto.php">Contacto</a>
                     <?php if ($auth) : ?>
-                        <a href="cerrar-sesion.php">Cerrar Sesión</a>
+                        <a href="/klothing-tfg/cerrar-sesion.php">Cerrar Sesión</a>
+                    <?php else : ?>
+                        <a href="/klothing-tfg/login.php">Iniciar Sesion</a>
                     <?php endif; ?>
                 </nav>
             </div>

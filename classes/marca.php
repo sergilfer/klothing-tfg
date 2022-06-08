@@ -5,35 +5,19 @@ namespace App;
 class ropa
 {
     protected static $db;
-    protected static $column_db = ['Id', 'Genero', 'Talla', 'Color', 'Tipo', 'Marca', 'Stock', 'Descripcion', 'Imagen', 'Precio', 'Titulo'];
+    protected static $column_db = ['Id', 'Nombre', 'Imagen'];
 
     protected static $campos_vacios = [];
 
     public $Id;
-    public $Genero;
-    public $Talla;
-    public $Color;
-    public $Tipo;
-    public $Marca;
-    public $Stock;
-    public $Descripcion;
+    public $Nombre;
     public $Imagen;
-    public $Precio;
-    public $Titulo;
 
     public function __construct($args = [])
     {
         $this->Id = $args['id'] ?? null;
-        $this->Genero = $args['genero'] ?? '';
-        $this->Talla = $args['talla'] ?? '';
-        $this->Color = $args['color'] ?? '';
-        $this->Tipo = $args['tipo'] ?? '';
-        $this->Marca = $args['marca'] ?? '';
-        $this->Stock = $args['stock'] ?? '';
-        $this->Descripcion = $args['descripcion'] ?? '';
+        $this->Nombre = $args['nombre'] ?? '';
         $this->Imagen = $args['imagen'] ?? '';
-        $this->Precio = $args['precio'] ?? '';
-        $this->Titulo = $args['titulo'] ?? '';
     }
 
     public static function setDB($database)
@@ -47,12 +31,11 @@ class ropa
         $atributos = $this->sanitizarAtributos();
 
         // Insertar en la base de datos
-        $query = " INSERT INTO tiendaropa (";
+        $query = " INSERT INTO marca (";
         $query .= join(', ', array_keys($atributos));
         $query .= " ) VALUES ('";
         $query .= join("', '", array_values($atributos));
         $query .= "') ";
-
 
         // Resultado de la consulta
         $resultado = self::$db->query($query);
@@ -98,51 +81,17 @@ class ropa
 
     public function validar()
     {
-        if (!$this->Genero) {
-            self::$campos_vacios[] = "Debes añadir un Genero";
-        }
-        if (!$this->Titulo) {
-            self::$campos_vacios[] = "Debes añadir un titulo";
-        }
-        if (!$this->Marca) {
-            self::$campos_vacios[] = "Debes seleccionar una marca";
-        }
-        if (!$this->Precio) {
-            self::$campos_vacios[] = "Debes añadir un precio";
-        }
-        if (!$this->Descripcion) {
-            self::$campos_vacios[] = "La descripcion es un campo obligatorio que debe constar de más de 50 caracteres";
-        }
-        if (!$this->Talla) {
-            self::$campos_vacios[] = "Debes seleccionar una talla";
-        }
-        if (!$this->Color) {
-            self::$campos_vacios[] = "Debes añadir un modelo";
-        }
-        if (!$this->Tipo) {
-            self::$campos_vacios[] = "Debes seleccionar un tipo de ropa";
-        }
-        if (!$this->Stock) {
-            self::$campos_vacios[] = "Debe introducir un stock";
+        if (!$this->Nombre) {
+            self::$campos_vacios[] = "Debes añadir un Nombre";
         }
         if (!$this->Imagen) {
-            self::$campos_vacios[] = "Debe introducir una Imagen";
+            self::$campos_vacios[] = "Debes añadir una Imagen";
         }
-        return self::$campos_vacios;
     }
-
-    //listar todaas las propiedades 
 
     public static function all()
     {
-        $query = "SELECT * FROM tiendaropa";
-        $resultado = self::consultarSQL($query);
-        return $resultado;
-
-    }
-
-    public static function selectTalla(){
-        $query = "SELECT Talla * FROM tiendaropa";
+        $query = "SELECT * FROM marca";
         $resultado = self::consultarSQL($query);
         return $resultado;
     }

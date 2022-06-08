@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 session_start();
                 $_SESSION['usuario'] = $usuario['email'];
                 $_SESSION['logueado'] = true;
-
+                	
                 header('Location: /klothing-tfg/admin');
             }else{
                 $campos_vacios[] = "La contraseña introducida no es correcta";

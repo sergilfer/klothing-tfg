@@ -20,9 +20,9 @@
         <div class="contenedor-anuncios">
             <div class="anuncio">
                 <picture>
-                    <source srcset="build/img/tienda/camiseta1.webp" type="image/webp" />
-                    <source srcset="build/img/tienda/camiseta1.jpg" type="image/jpeg" />
-                    <img loading="lazy" src="build/img/tienda/camiseta1.jpg" alt="anuncio" />
+                    <source srcset="build/img/tienda/lacoste/camiseta1.webp" type="image/webp" />
+                    <source srcset="build/img/tienda/lacoste/camiseta1.jpg" type="image/jpeg" />
+                    <img loading="lazy" src="build/img/tienda/lacoste/camiseta1.jpg" alt="anuncio" />
                 </picture>
                 <div class="contenido-anuncio">
                     <h3>Camiseta Lacoste</h3>
@@ -33,9 +33,9 @@
 
             <div class="anuncio">
                 <picture>
-                    <source srcset="build/img/tienda/chandal1.webp" type="image/webp" />
-                    <source srcset="build/img/tienda/chandal1.jpg" type="image/jpeg" />
-                    <img loading="lazy" src="build/img/tienda/chandal1.jpg" alt="anuncio" />
+                    <source srcset="build/img/tienda/lacoste/chandal1.webp" type="image/webp" />
+                    <source srcset="build/img/tienda/lacoste/chandal1.jpg" type="image/jpeg" />
+                    <img loading="lazy" src="build/img/tienda/lacoste/chandal1.jpg" alt="anuncio" />
                 </picture>
                 <div class="contenido-anuncio">
                     <h3>Chandal Lacoste</h3>
@@ -46,9 +46,9 @@
 
             <div class="anuncio">
                 <picture>
-                    <source srcset="build/img/tienda/sudadera1.webp" type="image/webp" />
-                    <source srcset="build/img/tienda/sudadera1.jpg" type="image/jpeg" />
-                    <img loading="lazy" src="build/img/tienda/sudadera1.jpg" alt="anuncio" />
+                    <source srcset="build/img/tienda/lacoste/sudadera1.webp" type="image/webp" />
+                    <source srcset="build/img/tienda/lacoste/sudadera1.jpg" type="image/jpeg" />
+                    <img loading="lazy" src="build/img/tienda/lacoste/sudadera1.jpg" alt="anuncio" />
                 </picture>
                 <div class="contenido-anuncio">
                     <h3>Sudadera Lacoste</h3>
@@ -72,9 +72,9 @@
         <div class="contenedor-anuncios">
             <div class="anuncio">
                 <picture>
-                    <source srcset="build/img/tienda/camiseta1.webp" type="image/webp" />
-                    <source srcset="build/img/tienda/camiseta1.jpg" type="image/jpeg" />
-                    <img loading="lazy" src="build/img/tienda/camiseta1.jpg" alt="anuncio" />
+                    <source srcset="build/img/tienda/lacoste/camiseta1.webp" type="image/webp" />
+                    <source srcset="build/img/tienda/lacoste/camiseta1.jpg" type="image/jpeg" />
+                    <img loading="lazy" src="build/img/tienda/lacoste/camiseta1.jpg" alt="anuncio" />
                 </picture>
                 <div class="contenido-anuncio">
                     <h3>Camiseta Lacoste</h3>
@@ -85,9 +85,9 @@
 
             <div class="anuncio">
                 <picture>
-                    <source srcset="build/img/tienda/chandal1.webp" type="image/webp" />
-                    <source srcset="build/img/tienda/chandal1.jpg" type="image/jpeg" />
-                    <img loading="lazy" src="build/img/tienda/chandal1.jpg" alt="anuncio" />
+                    <source srcset="build/img/tienda/lacoste/chandal1.webp" type="image/webp" />
+                    <source srcset="build/img/tienda/lacoste/chandal1.jpg" type="image/jpeg" />
+                    <img loading="lazy" src="build/img/tienda/lacoste/chandal1.jpg" alt="anuncio" />
                 </picture>
                 <div class="contenido-anuncio">
                     <h3>Chandal Lacoste</h3>
@@ -98,9 +98,9 @@
 
             <div class="anuncio">
                 <picture>
-                    <source srcset="build/img/tienda/sudadera1.webp" type="image/webp" />
-                    <source srcset="build/img/tienda/sudadera1.jpg" type="image/jpeg" />
-                    <img loading="lazy" src="build/img/tienda/sudadera1.jpg" alt="anuncio" />
+                    <source srcset="build/img/tienda/lacoste/sudadera1.webp" type="image/webp" />
+                    <source srcset="build/img/tienda/lacoste/sudadera1.jpg" type="image/jpeg" />
+                    <img loading="lazy" src="build/img/tienda/lacoste/sudadera1.jpg" alt="anuncio" />
                 </picture>
                 <div class="contenido-anuncio">
                     <h3>Sudadera Lacoste</h3>
@@ -122,6 +122,8 @@
     <section class="imagen-contacto">
         <h2>Si no encuentras una talla contacta con nosotros</h2>
         <p>Rellena el formulario de contacto y dinos tu consulta</p>
+        <img src="build/img/tienda/lacoste/banner.jpg" alt="">
+
         <a href="contacto.php" class="boton-amarillo">Contactanos</a>
     </section>
     <!--FIN CONTACTA PARA LA TALLA-->
@@ -132,9 +134,9 @@
             <article class="entrada-blog">
                 <div class="imagen">
                     <picture>
-                        <source srcset="build/img/tienda/sudadera1.webp" type="image/webp" />
-                        <source srcset="build/img/tienda/sudadera1.jpg" type="image/jpeg" />
-                        <img loading="lazy" src="build/img/tienda/sudadera1.jpg" alt="Imagen prueba" />
+                        <source srcset="build/img/tienda/lacoste/sudadera1.webp" type="image/webp" />
+                        <source srcset="build/img/tienda/lacoste/sudadera1.jpg" type="image/jpeg" />
+                        <img loading="lazy" src="build/img/tienda/lacoste/sudadera1.jpg" alt="Imagen prueba" />
                     </picture>
                 </div>
 
@@ -149,9 +151,9 @@
             <article class="entrada-blog">
                 <div class="imagen">
                     <picture>
-                        <source srcset="build/img/tienda/camiseta1.webp" type="image/webp" />
-                        <source srcset="build/img/tienda/camiseta1.jpg" type="image/jpeg" />
-                        <img loading="lazy" src="build/img/tienda/camiseta1.jpg" alt="Imagen prueba" />
+                        <source srcset="build/img/tienda/lacoste/camiseta1.webp" type="image/webp" />
+                        <source srcset="build/img/tienda/lacoste/camiseta1.jpg" type="image/jpeg" />
+                        <img loading="lazy" src="build/img/tienda/lacoste/camiseta1.jpg" alt="Imagen prueba" />
                     </picture>
                 </div>
 

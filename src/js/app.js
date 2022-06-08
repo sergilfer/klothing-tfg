@@ -3,11 +3,11 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function iniciarApp() {
-    navegacionFija();
+    //navegacionFija();
     menu();
 }
 
-function navegacionFija() {
+/*function navegacionFija() {
     const barra = document.querySelector('.header');
     const aparece = document.querySelector('.contenido-video');
     const body = document.querySelector('body');
@@ -22,7 +22,7 @@ function navegacionFija() {
             body.classList.remove('body-scroll');
         }
     });
-}
+}*/
 
 function menu() {
     const mobileMenu = document.querySelector('.mobile-menu');

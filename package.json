@@ -6,7 +6,6 @@
   "scripts": {
     "dev": "gulp"
   },
-  
   "author": "Sergio Gil Fernandez",
   "license": "SGF",
   "devDependencies": {

@@ -1,6 +1,7 @@
 <?php 
     require 'includes/app.php';
     incluirTemplates('header');
+    var_dump($_SESSION);
 ?>
 
 

@@ -17,7 +17,7 @@ $consulta_id = "SELECT * FROM tiendaropa WHERE id = ${id}";
 $resultado_id = realizarConsulta($db, $consulta_id);
 $prenda = mysqli_fetch_assoc($resultado_id); // en esta variable ya tendria todos los datos de mi id 
 
-$consulta_marcas = "SELECT DISTINCT * FROM marca";
+$consulta_marcas = "SELECT * FROM marca";
 $marcas_db = realizarConsulta($db, $consulta_marcas);
 
 $consulta_tallas = "SELECT DISTINCT Talla FROM tiendaropa ORDER BY CASE 

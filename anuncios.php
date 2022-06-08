@@ -26,8 +26,7 @@ incluirTemplates('header');
 <main class="contenedor seccion contenido-centrado">
     <h1><?php echo $ropa['Titulo']; ?></h1>
 
-    <?php  var_dump($ropa) ?>
-   
+
 
     <div class="contenido-ropa">
         <picture>
@@ -36,7 +35,7 @@ incluirTemplates('header');
 
         <div class="resumen-ropa">
 
-            <p><span>Descripción:</span> <?php echo $ropa['Descripcion']; ?></p>
+
             <div class="precio-tallas">
 
                 <p class="precio">Precio <?php echo $ropa['Precio']; ?>$</p>
@@ -47,14 +46,15 @@ incluirTemplates('header');
                         <?php while ($row = mysqli_fetch_assoc($talla_db)) : ?>
                             <option <?php echo $talla === $row['Talla'] ? 'selected' : ''; ?> value="<?php echo $ropa['Talla']; ?>"> <?php echo $ropa['Talla'] ?> </option>
                         <?php endwhile; ?>
-                        
+
                     </select>
 
                     <div class="alinear-derecha">
-            <input type="submit" value="Comprar" class="boton boton-verde">
-        </div>
+                        <input type="submit" value="Comprar" class="boton boton-verde">
+                    </div>
                 </form>
             </div>
+            <p><span>Descripción:</span> <?php echo $ropa['Descripcion']; ?></p>
 
 
         </div>

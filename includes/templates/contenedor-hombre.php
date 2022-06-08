@@ -1,12 +1,19 @@
 <?php
 $db = conectarDB();
 
-$query = "SELECT * FROM tiendaropa WHERE Genero = 'Hombre'";
+$genero = $_GET['genero'];
+
+$query = "SELECT * FROM tiendaropa WHERE Genero = '${genero}'";
+
 
 $resultado = realizarConsulta($db, $query);
 ?>
 
-<h2>Seccion Hombre</h2>
+<?php if ($genero === 'Hombre') :  ?>
+    <h2>Seccion Hombre</h2>
+<?php else : ?>
+    <h2>Seccion Mujer</h2>
+<?php endif; ?>
 <div class="contenedor-anuncios">
 
     <?php while ($ropa = mysqli_fetch_assoc($resultado)) : ?>
