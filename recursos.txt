@@ -8,6 +8,8 @@ Programas Usados:
         -   PHP Debug (sirve para debugear codigo en php, pudiendo abrir el studio code desde la terminal de JAVASCRIPT debug Terminal y asi poder poner puntos de ruptura, para poder saber donde estan los fallos)
         -   PHP Intelephense (ayuda a identar el codigo en php)
         -   PHP IntelliSense (ayuda autocompletar codigo php)
+        ******************************************************************
+        -   PHP Namespace Resolver (importa solo los use/ cuando los necesito)
 
 -   Apache (programa utilizado para montar el servidor para que funcione la web)
 

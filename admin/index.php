@@ -1,11 +1,15 @@
 <?php
 require '../includes/app.php';
-use App\ropa;
+
+use App\Ropa;
+use App\Marca;
 
 isLogged();
 
 //metodo para obtener todas las prendas de ropa
-$todas_ropa = ropa::all();
+$ropas = Ropa::all();
+$marcas = Marca::all();
+
 
 
 //esta linea lee la URL y saca la parte de resultado para ver que valor se le ha pasado, en el caso de tener un valor al añadir/borrar/actualizar 
@@ -16,20 +20,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $id = filter_var($id, FILTER_VALIDATE_INT);
 
     if ($id) {
-        $borrarImagen = "SELECT Imagen FROM tiendaropa WHERE id = ${id}";
-
-        $resultadoBorrarImagen = realizarConsulta($db, $borrarImagen);
-        $imagenBorrar = mysqli_fetch_assoc($resultadoBorrarImagen);
-
-        //Primero borro la imagen de mi servidor
-        unlink('../imagenes_subidas/' . $imagenBorrar['Imagen']);
-
-        //Ahora borro el registro
-        $query = "DELETE FROM tiendaropa WHERE id = ${id}";
-        $resultado = mysqli_query($db, $query);
-
-        if ($resultado) {
-            header('Location: /klothing-tfg/admin?codeURL=3');
+        $tipo = $_POST['tipo'];
+        if (validarTipo($tipo)) {
+            if ($tipo === 'ropa') {
+                $ropa = Ropa::getById($id);
+                $ropa->eliminar();
+            } else if ($tipo === 'marca') {
+                $marca = Marca::getById($id);
+                $marca->eliminar();
+            }
         }
     }
 }
@@ -53,8 +52,8 @@ incluirTemplates('header');
     <div class="crear">
         <h3>Crear Elementos</h3>
         <div class="bt-crear">
-            <a href="../admin/propiedades/crear_ropa.php" class="boton boton-verde">Crear Ropa</a>
-            <a href="../admin/propiedades/crear_marca.php" class="boton boton-verde">Crear Marca</a>
+            <a href="../admin/ropa/crear_ropa.php" class="boton boton-verde">Crear Ropa</a>
+            <a href="../admin/marca/crear_marca.php" class="boton boton-verde">Crear Marca</a>
         </div>
     </div>
 
@@ -78,7 +77,7 @@ incluirTemplates('header');
 
         <tbody>
             <tr>
-                <?php foreach ($todas_ropa as $ropa) : ?>
+                <?php foreach ($ropas as $ropa) : ?>
                     <td> <?php echo $ropa->Id ?></td>
                     <td><?php echo $ropa->Tipo ?></td>
                     <td> <?php echo $ropa->Color ?> </td>
@@ -92,16 +91,49 @@ incluirTemplates('header');
                     <td>
                         <form method="POST" class="w-100">
                             <input type="hidden" name="id_borrar" value="<?php echo $ropa->Id ?>">
+                            <input type="hidden" name="tipo" value="ropa">
                             <input type="submit" class="boton-rojo-block" value="Eliminar">
                         </form>
-                        <a href="../admin/propiedades/actualizar_ropa.php?id=<?php echo $ropa->Id ?>" class="boton-amarillo-block">Actualizar</a>
+                        <a href="../admin/ropa/actualizar_ropa.php?id=<?php echo $ropa->Id ?>" class="boton-amarillo-block">Actualizar</a>
                     </td>
             </tr>
         <?php endforeach; ?>
         </tbody>
     </table>
 
+    <h2>Listado de Marcas</h2>
+    <table class="listado-ropa">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Imagen</th>
+                <th>Acciones</th>
 
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+            <tr>
+                <?php foreach ($marcas as $marca) : ?>
+                    <td> <?php echo $marca->Id ?></td>
+                    <td><?php echo $marca->Nombre ?></td>
+                    <td> <img src="../imagenes_subidas/<?php echo $marca->Imagen; ?>" class="imagen-tabla"> </td>
+                    <td>
+                        <form method="POST" class="w-100">
+                            <input type="hidden" name="id_borrar" value="<?php echo $marca->Id ?>">
+                            <input type="hidden" name="tipo" value="marca">
+
+                            <input type="submit" class="boton-rojo-block" value="Eliminar">
+                        </form>
+                        <a href="../admin/marca/actualizar_marca.php?id=<?php echo $marca->Id ?>" class="boton-amarillo-block">Actualizar</a>
+                    </td>
+            </tr>
+        <?php endforeach; ?>
+        </tbody>
+    </table>
 
 </main>
 

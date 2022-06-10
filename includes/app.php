@@ -6,6 +6,7 @@ require __DIR__ . '/../vendor/autoload.php';
 //Conectar a la base de datos
 $db = conectarDB();
 
-use App\ropa;
+use App\ActiveRecord;
 
-ropa::setDB($db);
+
+ActiveRecord::setDB($db);

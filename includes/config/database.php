@@ -1,7 +1,7 @@
 <?php
 
 function conectarDB() : mysqli{
-    $db = new mysqli ('localhost', 'root', '' , 'tfg_db');
+    $db = new mysqli ('localhost', 'root', '1234' , 'tfg_db');
     if(!$db){
         echo "No se pudo conectar";
         exit;

@@ -2,7 +2,7 @@
 
 define('TEMPLATES_URL', __DIR__ . '/templates');
 define('FUNCIONES_URL', __DIR__ . 'funciones.php');
-define('IMAGENES_SUBIDAS', __DIR__ . '../imagenes_subidas/');
+define('IMAGENES_SUBIDAS', __DIR__ . '../../imagenes_subidas/');
 
 function incluirTemplates(string $nombre)
 {
@@ -28,4 +28,17 @@ function debug($arg)
 function cleanCode($html) : string{
     $code = htmlspecialchars($html);
     return $code;
+}
+
+function recorre ($objetos, $consulta){
+    $row = [];
+    foreach ($objetos as $objeto){
+        $row[] = $objeto->$consulta;
+    }
+    return $row;
+}
+
+function validarTipo ($tipo){
+    $tipos = ['ropa', 'marca'];
+    return in_array($tipo, $tipos);
 }
