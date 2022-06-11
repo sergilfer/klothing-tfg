@@ -1,32 +1,37 @@
 <?php
-require   '../../includes/app.php';
 
-$db = conectarDB();
+use Model\Ropa;
 
-$query = "SELECT * FROM tiendaropa";
+$genero = $_GET['genero'] ?? null;
+if (!$genero) {
+    $ropas = Ropa::all();
+} else {
+    $ropas = Ropa::selectByGender($genero);
+}
 
-$resultado = realizarConsulta($db, $query);
-incluirTemplates('header');
+
 ?>
 
-<h2>Ver Todos</h2>
+<h2><?php echo mostrarGenero($genero); ?></h2>
+
+
 <div class="contenedor-anuncios">
 
-    <?php while ($ropa = mysqli_fetch_assoc($resultado)) : ?>
+    <?php foreach ($ropas as $ropa) { ?>
         <div class="anuncio">
             <picture>
-                <img loading="lazy" src="../../imagenes_subidas/<?php echo $ropa['Imagen']; ?>" alt="anuncio" />
+                <img loading="lazy" src="imagenes_subidas/<?php echo $ropa->Imagen; ?>" alt="anuncio" />
             </picture>
             <div class="contenido-anuncio">
-                <h3><?php echo $ropa['Titulo'] ?></h3>
-                <p><?php echo $ropa['Descripcion'] ?></p>
-                <p class="precio"><?php echo $ropa['Precio'] ?> €</p>
-                <a href="../../anuncios.php?id=<?php echo $ropa['Id']; ?>" class="boton-amarillo-block">Comprar</a>
+                <h3><?php echo $ropa->Titulo ?></h3>
+                <p><?php echo $ropa->Descripcion ?></p>
+                <p class="precio"><?php echo $ropa->Precio ?> €</p>
+                <a href="anuncios.php?id=<?php echo $ropa->Id; ?>" class="boton-amarillo-block">Comprar</a>
             </div>
             <!---.contenido anuncio-->
         </div>
         <!---.anuncio-->
-    <?php endwhile; ?>
+    <?php } ?>
 </div>
 <!---.contenedor anuncios-->
 

@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit89930ae856bad33830146585cb0b74f2
+class ComposerStaticInit4740f1ca31046d7238f77f1be6248233
 {
     public static $files = array (
         '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
@@ -15,6 +15,11 @@ class ComposerStaticInit89930ae856bad33830146585cb0b74f2
         array (
             'Psr\\Http\\Message\\' => 17,
         ),
+        'M' => 
+        array (
+            'Model\\' => 6,
+            'MVC\\' => 4,
+        ),
         'I' => 
         array (
             'Intervention\\Image\\' => 19,
@@ -23,9 +28,9 @@ class ComposerStaticInit89930ae856bad33830146585cb0b74f2
         array (
             'GuzzleHttp\\Psr7\\' => 16,
         ),
-        'A' => 
+        'C' => 
         array (
-            'App\\' => 4,
+            'Controllers\\' => 12,
         ),
     );
 
@@ -35,6 +40,14 @@ class ComposerStaticInit89930ae856bad33830146585cb0b74f2
             0 => __DIR__ . '/..' . '/psr/http-factory/src',
             1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
+        'Model\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/models',
+        ),
+        'MVC\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/',
+        ),
         'Intervention\\Image\\' => 
         array (
             0 => __DIR__ . '/..' . '/intervention/image/src/Intervention/Image',
@@ -43,9 +56,9 @@ class ComposerStaticInit89930ae856bad33830146585cb0b74f2
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/psr7/src',
         ),
-        'App\\' => 
+        'Controllers\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/classes',
+            0 => __DIR__ . '/../..' . '/controllers',
         ),
     );
 
@@ -56,9 +69,9 @@ class ComposerStaticInit89930ae856bad33830146585cb0b74f2
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit89930ae856bad33830146585cb0b74f2::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit89930ae856bad33830146585cb0b74f2::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit89930ae856bad33830146585cb0b74f2::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit4740f1ca31046d7238f77f1be6248233::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit4740f1ca31046d7238f77f1be6248233::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit4740f1ca31046d7238f77f1be6248233::$classMap;
 
         }, null, ClassLoader::class);
     }
