@@ -1,6 +1,4 @@
 
-
-
         <section class="seccion contenedor">
             <h2>FALTA TODO EL INICIO </h2>
             <div class="alinear-derecha">

@@ -35,7 +35,7 @@ class RopaController
             $ropa = new Ropa($_POST);
             $nombre = md5(uniqid(rand(), true)) . ".jpg";
             if ($_FILES['Imagen']['tmp_name']) {
-                $image = Image::make($_FILES['Imagen']['tmp_name'])->fit(800, 600);
+                $image = Image::make($_FILES['Imagen']['tmp_name']);
                 $ropa->setImagen($nombre);
             }
             $campos_vacios = $ropa->validar();

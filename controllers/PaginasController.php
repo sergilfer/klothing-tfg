@@ -4,6 +4,7 @@ namespace Controllers;
 
 use MVC\Router;
 use Model\Ropa;
+use Model\Marca;
 use PHPMailer\PHPMailer\PHPMailer;
 
 class PaginasController
@@ -19,13 +20,22 @@ class PaginasController
         $router->render('paginas/nosotros', []);
     }
 
-    public static function anuncios(Router $router)
+    public static function anuncio(Router $router)
     {
+        $id_anuncio = $_GET['id'];
 
-        $propiedades = Ropa::all();
+        if (!$id_anuncio) {
+            header('Location: /tfg');
+        }
 
-        $router->render('paginas/propiedades', [
-            'propiedades' => $propiedades
+        $ropa = Ropa::getById($id_anuncio);
+
+        $ropas = Ropa::selectByTitle($ropa->Titulo);
+        $tallas = array_unique(recorre($ropas, "Talla"));
+        $router->render('paginas/anuncio',[
+            'ropa' => $ropa,
+            'tallas' => $tallas,
+            'ropas' => $ropas
         ]);
     }
 
@@ -34,19 +44,29 @@ class PaginasController
 
         // Obtener los datos de la propiedad
 
-        $router->render('paginas/propiedad', [
-    
-        ]);
+        $router->render('paginas/detalles', []);
     }
 
     public static function marcas(Router $router)
-    {
 
-        $router->render('paginas/blog');
+    {
+        $marcas = Marca::all();
+        $router->render('paginas/marcas', [
+            'marcas' => $marcas
+        ]);
     }
 
     public static function seccion(Router $router)
     {
-        $router->render('paginas/entrada');
+        $genero = $_GET['genero'] ?? null;
+        if (!$genero) {
+            $ropas = Ropa::all();
+        } else {
+            $ropas = Ropa::selectByGender($genero);
+        }
+        $router->render('paginas/seccion', [
+            'ropas' => $ropas,
+            'genero' => $genero
+        ]);
     }
 }

@@ -26,13 +26,13 @@ $router->post('/marca/actualizar', [new MarcaController(), 'actualizar']);
 $router->post('/marca/eliminar', [new MarcaController(), 'eliminar']);
 
 // ZONA PUBLICA (ABIERTA A CUALQUIER USUARIO)
-$router->get('/', [PaginasController::class, 'index']);
-$router->get('/nosotros', [PaginasController::class, 'nosotros']);
-$router->get('/seccion', [PaginasController::class, 'seccion']);
-$router->get('/anuncios', [PaginasController::class, 'anuncios']);
-$router->get('/marcas', [PaginasController::class, 'marcas']);
-$router->get('/detalles', [PaginasController::class, 'detalles']);
-$router->post('/contacto', [PaginasController::class, 'contacto']);
+$router->get('/', [new PaginasController(), 'index']);
+$router->get('/nosotros', [new PaginasController(), 'nosotros']);
+$router->get('/seccion', [new PaginasController(), 'seccion']);
+$router->get('/anuncio', [new PaginasController(), 'anuncio']);
+$router->get('/marcas', [new PaginasController(), 'marcas']);
+$router->get('/detalles', [new PaginasController(), 'detalles']);
+$router->post('/contacto', [new PaginasController(), 'contacto']);
 
 //ZONA DE USUARIOS (LOGIN Y LOGOUT)
 $router->get('/login', [LoginController::class, 'login']);

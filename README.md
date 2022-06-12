@@ -7,3 +7,5 @@ Tras la descarga de los ficheros, deberas abrir la terminal de VSCode y realizar
 -   npm install
 -   composer install
 -   composer update
+
+- Para iniciar el servidor php -S localhost:3000

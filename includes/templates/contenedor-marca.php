@@ -5,6 +5,7 @@ $query = "SELECT * FROM marca";
 
 $resultado = realizarConsulta($db, $query);
 ?>
+
 <div class="contenedor-anuncios ">
     <?php while ($marca = mysqli_fetch_assoc($resultado)) : ?>
         <div class="anuncio">

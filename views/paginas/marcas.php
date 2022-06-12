@@ -1,12 +1,4 @@
-<?php
-require 'includes/app.php';
-incluirTemplates('header');
-?>
-
+<h2>Marcas</h2>
 <section class="seccion contenedor">
-    <?php
-    $genero = 'Hombre';
-    include 'includes/templates/contenedor-marca.php' ?>
+    <?php include 'contenido-marca.php'; ?>
 </section>
-
-<?php incluirTemplates('footer'); ?>
