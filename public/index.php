@@ -32,11 +32,14 @@ $router->get('/seccion', [new PaginasController(), 'seccion']);
 $router->get('/anuncio', [new PaginasController(), 'anuncio']);
 $router->get('/marcas', [new PaginasController(), 'marcas']);
 $router->get('/detalles', [new PaginasController(), 'detalles']);
+$router->get('/contacto', [new PaginasController(), 'contacto']);
 $router->post('/contacto', [new PaginasController(), 'contacto']);
 
 //ZONA DE USUARIOS (LOGIN Y LOGOUT)
-$router->get('/login', [LoginController::class, 'login']);
-$router->post('/login', [LoginController::class, 'login']);
-$router->get('/logout', [LoginController::class, 'logout']);
+$router->get('/login', [new LoginController(), 'login']);
+$router->post('/login', [new LoginController(), 'login']);
+$router->get('/logout', [new LoginController(), 'logout']);
+$router->post('/register', [new LoginController(), 'register']);
+$router->get('/register', [new LoginController(), 'register']);
 
 $router -> comprobarRutas();

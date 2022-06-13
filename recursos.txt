@@ -19,6 +19,8 @@ Programas Usados:
 
 - Laragon (programa que utilizo para iniciar tanto el servidor de apache, como el de mysql, mirar mas info)
 
+-   PHP Server
+
 -   Windows Powershell (maybe no hace falta meterlo, solo usado para instalar otros programas y cambiar algun tipo de config)
 
 -   POSTMAN (llamadas a la API)
@@ -42,3 +44,9 @@ Lenguajes Usados:
 ¿Frameworks Utilizados?
 
 - GULP, Node, 
+
+EMAIL 
+
+PHPMailer
+
+Mailtrap.io (Laravel)

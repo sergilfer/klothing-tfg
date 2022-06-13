@@ -217,4 +217,55 @@ class ActiveRecord
         }
         return $objeto;
     }
+
+
+    public function existeUsuario() {
+        // Revisar si el usuario existe.
+        $query = "SELECT * FROM " . self::$tabla . " WHERE Email = '" . $this->Email . "' LIMIT 1";
+        $resultado = self::$db->query($query);
+
+        if(!$resultado->num_rows) {
+            self::$campos_vacios[] = 'El Usuario No Existe';
+            return;
+        }
+
+        return $resultado;
+    }
+
+    public function comprobarPassword($resultado) {
+        $usuario = $resultado->fetch_object();
+
+        $this->autenticado = password_verify( $this->password, $usuario->password );
+
+        if(!$this->autenticado) {
+            self::$campos_vacios[] = 'El Password es Incorrecto';
+            return;
+        } 
+    }
+
+    public function autenticar() {
+         // El usuario esta autenticado
+         session_start();
+
+         // Llenar el arreglo de la sesión
+         $_SESSION['usuario'] = $this->email;
+         $_SESSION['login'] = true;
+
+         header('Location: /admin');
+    }
+
+    public function registrarUsuario(){
+        $atributos = $this->sanitizarAtributos();
+
+        // Insertar en la base de datos
+        $query = " INSERT INTO " . static::$tabla . " (";
+        $query .= join(', ', array_keys($atributos));
+        $query .= " ) VALUES ('";
+        $query .= join("', '", array_values($atributos));
+        $query .= "') ";
+
+        // Resultado de la consulta
+        $resultado = self::$db->query($query);
+    }
+
 }
