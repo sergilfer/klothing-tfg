@@ -41,7 +41,6 @@ class PaginasController
 
     public static function detalles(Router $router)
     {
-        // Obtener los datos de la propiedad
 
         $router->render('paginas/detalles', []);
     }

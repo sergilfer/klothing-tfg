@@ -61,7 +61,7 @@ class ActiveRecord
         }
     }
 
-    
+
     public function actualizar()
     {
         $atributos = $this->sanitizarAtributos();
@@ -140,8 +140,7 @@ class ActiveRecord
             unlink(IMAGENES_SUBIDAS . $this->Imagen);
         }
     }
-
-    //listar todaas las propiedades 
+ 
 
     public static function all()
     {

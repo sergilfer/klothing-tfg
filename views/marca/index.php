@@ -1,5 +1,5 @@
 <main class="contenedor seccion">
-    <h1>Administrador de Vendedores</h1>
+    <h1>Administrador de Marcas</h1>
     <?php 
         $mensaje = mostrarNotificacion( intval( $resultado) );
         if($mensaje) { ?>

@@ -3,7 +3,7 @@
     "description": "TFG",
     "type": "project",
     "authors": [{
-        "name": "Sergio Gil Fernandez"
+        "name": "Sergio Gil Fernandez , Alvaro Benito Millan, Michael Ezeh Obinnah"
     }],
     "require": {
         "intervention/image": "^2.7",
