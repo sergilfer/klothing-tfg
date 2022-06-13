@@ -1,12 +1,12 @@
 {
-  "name": "modams",
+  "name": "klothing",
   "version": "1.0.0",
   "description": "Trabajo final grado",
   "main": "gulpfile.js",
   "scripts": {
     "dev": "gulp"
   },
-  "author": "Sergio Gil Fernandez",
+  "author": "Sergio Gil Fernandez , Alvaro Benito Millan, Michael Ezeh Obinnah",
   "license": "SGF",
   "devDependencies": {
     "cssnano": "^5.1.0",
