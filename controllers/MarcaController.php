@@ -28,7 +28,9 @@ class MarcaController
         $campos_vacios = Marca::getVacios();
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $marca = new Marca($_POST);
+            
             $nombre = md5(uniqid(rand(), true)) . ".jpg";
+
             if ($_FILES['Imagen']['tmp_name']) {
                 $image = Image::make($_FILES['Imagen']['tmp_name']);
                 $marca->setImagen($nombre);
@@ -45,7 +47,6 @@ class MarcaController
         $router->render('marca/crear', [
             'marca' => $marca,
             'campos_vacios' => $campos_vacios
-
         ]);
     }
 
@@ -71,12 +72,12 @@ class MarcaController
             }
         }
 
-        $router->render('marca/actualizar',[
+        $router->render('marca/actualizar', [
             'marca' => $marca,
             'campos_vacios' => $campos_vacios
         ]);
     }
-    
+
     public static function eliminar()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {

@@ -31,8 +31,10 @@ class RopaController
         $tallas = array_unique(recorre($ropas, "Talla"));
         $generos = array_unique(recorre($ropas, "Genero"));
         $campos_vacios = Ropa::getVacios();
+
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $ropa = new Ropa($_POST);
+            
             $nombre = md5(uniqid(rand(), true)) . ".jpg";
             if ($_FILES['Imagen']['tmp_name']) {
                 $image = Image::make($_FILES['Imagen']['tmp_name']);

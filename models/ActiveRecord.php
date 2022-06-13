@@ -52,6 +52,7 @@ class ActiveRecord
         $query .= join("', '", array_values($atributos));
         $query .= "') ";
 
+       
         // Resultado de la consulta
         $resultado = self::$db->query($query);
 
@@ -60,8 +61,7 @@ class ActiveRecord
         }
     }
 
-
-
+    
     public function actualizar()
     {
         $atributos = $this->sanitizarAtributos();
@@ -75,8 +75,8 @@ class ActiveRecord
         $query .= join(', ', $valores);
         $query .= " WHERE id = '" . self::$db->escape_string($this->Id) . "' ";
         $query .= "LIMIT 1 ";
-
-        $resultado = self::$db->query($query);
+        debug($query);
+        $resultado = self::$db->query($atributos);
 
         if ($resultado) {
             header('Location: ../admin?codeURL=2');
@@ -219,9 +219,9 @@ class ActiveRecord
     }
 
 
-    public function existeUsuario() {
+    public function existeUsuario($email) {
         // Revisar si el usuario existe.
-        $query = "SELECT * FROM " . self::$tabla . " WHERE Email = '" . $this->Email . "' LIMIT 1";
+        $query = "SELECT * FROM " . static::$tabla . " WHERE Email = ${email} ";
         $resultado = self::$db->query($query);
 
         if(!$resultado->num_rows) {
@@ -235,7 +235,7 @@ class ActiveRecord
     public function comprobarPassword($resultado) {
         $usuario = $resultado->fetch_object();
 
-        $this->autenticado = password_verify( $this->password, $usuario->password );
+        $this->autenticado = password_verify( $this->Password, $usuario->Password );
 
         if(!$this->autenticado) {
             self::$campos_vacios[] = 'El Password es Incorrecto';
@@ -248,7 +248,7 @@ class ActiveRecord
          session_start();
 
          // Llenar el arreglo de la sesión
-         $_SESSION['usuario'] = $this->email;
+         $_SESSION['usuario'] = $this->Email;
          $_SESSION['login'] = true;
 
          header('Location: /admin');

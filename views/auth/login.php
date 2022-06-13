@@ -8,7 +8,8 @@
     <?php endforeach; ?>
 
     <?php include __DIR__ . '/formulario.php'; ?>
-    <input type="submit" value="Iniciar Sesion" class="boton boton-verde">
     
+    <input type="submit" value="Iniciar Sesion" class="boton boton-verde">
+
     <a href="/register" class="boton boton-verde">Registrar nueva cuenta</a>
 </main>
