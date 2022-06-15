@@ -77,7 +77,6 @@ class Email
 
     public function enviarInstrucciones($nombre, $email, $token)
     {
-
         // create a new object
         $mail = new PHPMailer();
         $mail->isSMTP();

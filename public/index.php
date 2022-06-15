@@ -32,8 +32,11 @@ $router->get('/seccion', [new PaginasController(), 'seccion']);
 $router->get('/anuncio', [new PaginasController(), 'anuncio']);
 $router->get('/marcas', [new PaginasController(), 'marcas']);
 $router->get('/detalles', [new PaginasController(), 'detalles']);
+$router->get('/ropamarca', [new PaginasController(), 'filtroMarcas']);
+
 $router->get('/contacto', [new PaginasController(), 'contacto']);
 $router->post('/contacto', [new PaginasController(), 'contacto']);
+
 
 // Iniciar Sesión
 $router->get('/login', [new LoginController(), 'login']);
@@ -52,7 +55,6 @@ $router->post('/register', [new LoginController(), 'register']);
 
 // Confirmar cuenta
 $router->get('/confirmar-cuenta', [new LoginController(), 'confirmar']);
-
 $router->get('/mensaje', [new LoginController(), 'mensaje']);
 
 

@@ -68,7 +68,7 @@ class RopaController
     {
 
         $id = validarId('/admin');
-        $ropa = Ropa::getById($id);
+        $ropa = Ropa::where('Id',$id);
         $ropas = Ropa::all();
         $marcas = Marca::all();
         $tallas = array_unique(recorre($ropas, "Talla"));
@@ -112,7 +112,7 @@ class RopaController
             if ($id) {
                 $tipo = $_POST['tipo'];
                 if (validarTipo($tipo)) {
-                    $ropa = Ropa::getById($id);
+                    $ropa = Ropa::where('Id',$id);
                     $ropa->eliminar();
                 }
             }

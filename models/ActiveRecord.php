@@ -156,9 +156,9 @@ class ActiveRecord
     }
 
     //Este metodo lo usare para que me devuelva por distincion de genero y en el caso de que tengan el mismo titulo, que no me los repita para no mostrar resultados repetidos
-    public static function selectByGender($genero)
+    public static function whereArray($columna, $valor)
     {
-        $query = "SELECT * FROM " . static::$tabla . " WHERE Genero = " . "'${genero}'" . "GROUP BY Titulo";
+        $query = "SELECT * FROM " . static::$tabla . " WHERE ${columna} = '${valor}'";
         $resultado = self::consultarSQL($query);
         return $resultado;
     }
@@ -169,14 +169,6 @@ class ActiveRecord
         $query = "SELECT * FROM " . static::$tabla . " WHERE Titulo = " . "'${titulo}'";
         $resultado = self::consultarSQL($query);
         return $resultado;
-    }
-
-    //buscar la ropa por el id 
-    public static function getById($id)
-    {
-        $consulta_id = "SELECT * FROM " . static::$tabla . " WHERE Id = ${id}";
-        $resultado = self::consultarSQL($consulta_id);
-        return array_shift($resultado);
     }
 
     public static function where($columna, $valor)

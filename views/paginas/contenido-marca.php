@@ -6,7 +6,7 @@
             </picture>
             <div class="contenido-anuncio imagen-header">
                 <h3><?php echo $marca->Nombre ?></h3>
-                <a href="lacoste.php" class="boton-amarillo-block">Ver</a>
+                <a href="ropamarca?id=<?php echo $marca->Id;?>" class="boton-amarillo-block">Ver</a>
             </div>
         </div>
     <?php } ?>

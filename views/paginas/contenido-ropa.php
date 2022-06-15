@@ -7,7 +7,6 @@
                 </picture>
                 <div class="contenido-anuncio">
                     <h3><?php echo $ropa->Titulo ?></h3>
-                    <p><?php echo $ropa->Descripcion ?></p>
                     <p class="precio"><?php echo $ropa->Precio ?> €</p>
                     <a href="anuncio?id=<?php echo $ropa->Id; ?>" class="boton-amarillo-block">Comprar</a>
                 </div>

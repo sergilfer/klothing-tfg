@@ -5,6 +5,9 @@
             <img loading="lazy" src="imagenes_subidas/<?php echo $ropa->Imagen; ?>" alt="anuncio" />
         </picture>
         <div class="resumen-ropa">
+            <h2 class="precio">Descripcion</h2>
+            <p><?php echo $ropa->Descripcion; ?></p>
+
             <div class="precio-tallas">
                 <p class="precio">Precio <?php echo $ropa->Precio; ?>$</p>
                 <form class="formulario" method="POST" enctype="multipart/form-data">
@@ -22,7 +25,6 @@
                     </div>
                 </form>
             </div>
-            <p><span>Descripción:</span> <?php echo $ropa->Descripcion; ?></p>
 
 
         </div>

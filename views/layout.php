@@ -38,7 +38,6 @@ $auth = $_SESSION['login'] ?? null;
             </div>
             <div class="derecha">
                 <nav class="navegacion">
-                    <a href="/nosotros">Nosotros</a>
                     <a href="/seccion?genero=Hombre">Hombre</a>
                     <a href="/seccion?genero=Mujer">Mujer</a>
                     <a href="/seccion">Ver todas</a>

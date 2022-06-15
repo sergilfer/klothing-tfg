@@ -86,3 +86,9 @@ function validarId(string $url)
     }
     return $id;
 }
+
+function nombreRandom(){
+    $nombres = [1 =>'Tommy', 2=> 'Vans',3 =>'Nike'];
+    $numero = rand(1,3);
+    echo $nombres[$numero];
+}

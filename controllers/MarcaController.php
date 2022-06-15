@@ -56,7 +56,7 @@ class MarcaController
     public static function  actualizar(Router $router)
     {
         $id = validarId('/admin');
-        $marca = Marca::getById($id);
+        $marca = Marca::where('Id',$id);
         $campos_vacios = Marca::getVacios();
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -92,7 +92,7 @@ class MarcaController
             if ($id) {
                 $tipo = $_POST['tipo'];
                 if (validarTipo($tipo)) {
-                    $marca = Marca::getById($id);
+                    $marca = Marca::where('Id',$id);
                     $marca->eliminar();
                 }
             }

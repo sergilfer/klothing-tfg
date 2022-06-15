@@ -13,7 +13,6 @@ class LoginController
         $admin = new Usuarios($_POST);
         $campos_vacios = $admin->validarLogin();
 
-
         if (empty($campos_vacios)) {
             //Compruebo que existe el usuario
             $usuario = Usuarios::where('email', $admin->Email);
@@ -38,7 +37,6 @@ class LoginController
                 Usuarios::setVacios('Usuario no encontrado');
             }
         }
-
         $campos_vacios = Usuarios::getVacios();
         $router->render('auth/login', [
             'campos_vacios' => $campos_vacios
