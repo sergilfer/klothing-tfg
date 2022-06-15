@@ -6,6 +6,7 @@ use Model\Ropa;
 use MVC\Router;
 use Model\Marca;
 use PHPMailer\PHPMailer\PHPMailer;
+use Classes\Email;
 
 class PaginasController
 {
@@ -74,52 +75,10 @@ class PaginasController
     public static function contacto(Router $router)
     {
         $mensaje = null;
-
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
             $relleno = $_POST;
-            $mail = new PHPMailer();
-            $mail->isSMTP();
-            $mail->Host = 'smtp.gmail.com';
-            $mail->SMTPAuth = true;
-            $mail->Username = 'klothing.tfg@gmail.com';
-            $mail->Password = 'sbthbghsjmwpysrl';
-            $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-            $mail->Port = 465;
-
-            //Configurar el contenido del email
-            $mail->setFrom('klothing.tfg@gmail.com', $relleno['nombre']); //quien envia el mail
-            $mail->addAddress($relleno['email']); //quien lo recibe
-            $mail->Subject = 'Tienes un nuevo Email';
-
-            $mail->isHTML(true);
-            $mail->CharSet = 'UTF-8';
-
-            $contenido = '<html>';
-            $contenido .= "<p><strong>Has Recibido un email:</strong></p>";
-            $contenido .= "<p>Nombre: " . $relleno['nombre'] . "</p>";
-            $contenido .= "<p>Mensaje: " . $relleno['mensaje'] . "</p>";
-            $contenido .= "<p>Talla: " . $relleno['tallas'] . "</p>";
-            $contenido .= "<p>Marca: " . $relleno['marca'] . "</p>";
-            
-            if($relleno['contacto'] === 'telefono') {
-                $contenido .= "<p>Eligió ser Contactado por Teléfono:</p>";
-                $contenido .= "<p>Su teléfono es: " .  $relleno['telefono'] ." </p>";
-                $contenido .= "<p>En la Fecha y hora: " . $relleno['fecha'] . " - " . $relleno['hora']  . " Horas</p>";
-            } else {
-                $contenido .= "<p>Eligio ser Contactado por Email:</p>";
-                $contenido .= "<p>El mail al que le contactaremos sera: " .  $relleno['email'] ." </p>";
-            }
-            
-            $contenido .='</html>';
-
-            $mail->Body = $contenido;
-
-            if ($mail->send()) {
-                $mensaje =  "Mensaje enviado correctamente";
-            } else {
-                $mensaje =  "No se pudo enviar el mensaje";
-            }
+            $mail = new Email();
+            $mail -> enviarMailContacto($relleno);
         }
         $router->render('paginas/contacto', [
             'mensaje' => $mensaje

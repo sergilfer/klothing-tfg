@@ -21,22 +21,24 @@ class Router
     public function comprobarRutas()
     {
         session_start();
-        $auth = $_SESSION['login'] ?? null;
-        //  $rutas_protegidas = ['/admin', 'ropa/crear', 'ropa/actualizar', 'ropa/eliminar', 
-        //  'marca/crear','marca/actualizar','marca/eliminar', ];
+        $auth = $_SESSION['admin'] ?? null;
+        $rutas_protegidas = [
+            '/admin', 'ropa/crear', 'ropa/actualizar', 'ropa/eliminar',
+            'marca/crear', 'marca/actualizar', 'marca/eliminar',
+        ];
         $currentUrl = $_SERVER['PATH_INFO'] ?? '/';
 
         $method = $_SERVER['REQUEST_METHOD'];
-        
+
         if ($method === 'GET') {
             $fn = $this->getRoutes[$currentUrl] ?? null;
         } else {
             $fn = $this->postRoutes[$currentUrl] ?? null;
         }
-        // if (in_array($currentUrl, $rutas_protegidas) && !$auth){
+        if (in_array($currentUrl, $rutas_protegidas) && !$auth) {
 
-        //    header('Location: /');
-        // }
+            header('Location: /');
+        }
         if ($fn) {
             // Call user fn va a llamar una función cuando no sabemos cual sera
             call_user_func($fn, $this); // This es para pasar argumentos

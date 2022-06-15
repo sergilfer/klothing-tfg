@@ -23,6 +23,11 @@ class ActiveRecord
         return static::$campos_vacios;
     }
 
+    public static function setVacios($mensaje)
+    {
+        static::$campos_vacios[] = $mensaje;
+    }
+
     public function validar()
     {
         static::$campos_vacios = [];
@@ -33,10 +38,12 @@ class ActiveRecord
     {
         if (!is_null($this->Id)) {
             //en este caso al tener id estoy actualizando
-            $this->actualizar();
+           $resultado =  $this->actualizar();
+           return $resultado;
         } else {
             //en este caso estaria insertando un nuevo registro
-            $this->insertar();
+            $resultado = $this->insertar();
+            return $resultado;
         }
     }
 
@@ -52,13 +59,10 @@ class ActiveRecord
         $query .= join("', '", array_values($atributos));
         $query .= "') ";
 
-       
+
         // Resultado de la consulta
         $resultado = self::$db->query($query);
-
-        if ($resultado) {
-            header('Location: ../admin?codeURL=1');
-        }
+        return $resultado;
     }
 
 
@@ -74,13 +78,8 @@ class ActiveRecord
         $query = " UPDATE " . static::$tabla . " SET ";
         $query .= join(', ', $valores);
         $query .= " WHERE id = '" . self::$db->escape_string($this->Id) . "' ";
-        $query .= "LIMIT 1 ";
-        debug($query);
-        $resultado = self::$db->query($atributos);
-
-        if ($resultado) {
-            header('Location: ../admin?codeURL=2');
-        }
+        $resultado = self::$db->query($query);
+        return $resultado;
     }
 
     //eliminar registro de la base de datos
@@ -140,7 +139,7 @@ class ActiveRecord
             unlink(IMAGENES_SUBIDAS . $this->Imagen);
         }
     }
- 
+
 
     public static function all()
     {
@@ -165,7 +164,8 @@ class ActiveRecord
     }
 
     //Este metodo lo usare para obtener todas las tallas de un titulo, es decir si X ropa tiene 2 tallas obtener los dos resultados
-    public static function selectByTitle($titulo){
+    public static function selectByTitle($titulo)
+    {
         $query = "SELECT * FROM " . static::$tabla . " WHERE Titulo = " . "'${titulo}'";
         $resultado = self::consultarSQL($query);
         return $resultado;
@@ -175,6 +175,13 @@ class ActiveRecord
     public static function getById($id)
     {
         $consulta_id = "SELECT * FROM " . static::$tabla . " WHERE Id = ${id}";
+        $resultado = self::consultarSQL($consulta_id);
+        return array_shift($resultado);
+    }
+
+    public static function where($columna, $valor)
+    {
+        $consulta_id = "SELECT * FROM " . static::$tabla . " WHERE ${columna} = '${valor}'";
         $resultado = self::consultarSQL($consulta_id);
         return array_shift($resultado);
     }
@@ -217,43 +224,8 @@ class ActiveRecord
         return $objeto;
     }
 
-
-    public function existeUsuario($email) {
-        // Revisar si el usuario existe.
-        $query = "SELECT * FROM " . static::$tabla . " WHERE Email = ${email} ";
-        $resultado = self::$db->query($query);
-
-        if(!$resultado->num_rows) {
-            self::$campos_vacios[] = 'El Usuario No Existe';
-            return;
-        }
-
-        return $resultado;
-    }
-
-    public function comprobarPassword($resultado) {
-        $usuario = $resultado->fetch_object();
-
-        $this->autenticado = password_verify( $this->Password, $usuario->Password );
-
-        if(!$this->autenticado) {
-            self::$campos_vacios[] = 'El Password es Incorrecto';
-            return;
-        } 
-    }
-
-    public function autenticar() {
-         // El usuario esta autenticado
-         session_start();
-
-         // Llenar el arreglo de la sesión
-         $_SESSION['usuario'] = $this->Email;
-         $_SESSION['login'] = true;
-
-         header('Location: /admin');
-    }
-
-    public function registrarUsuario(){
+    public function registrarUsuario()
+    {
         $atributos = $this->sanitizarAtributos();
 
         // Insertar en la base de datos
@@ -266,5 +238,4 @@ class ActiveRecord
         // Resultado de la consulta
         $resultado = self::$db->query($query);
     }
-
 }

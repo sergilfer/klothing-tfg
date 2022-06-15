@@ -34,7 +34,7 @@ class RopaController
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $ropa = new Ropa($_POST);
-            
+
             $nombre = md5(uniqid(rand(), true)) . ".jpg";
             if ($_FILES['Imagen']['tmp_name']) {
                 $image = Image::make($_FILES['Imagen']['tmp_name']);
@@ -48,7 +48,10 @@ class RopaController
                 }
                 //Guardar la imagen en el servidor
                 $image->save(IMAGENES_SUBIDAS . $nombre);
-                $ropa->guardar();
+                $resultado = $ropa->guardar();
+                if ($resultado) {
+                    header('Location: ../admin?codeURL=1');
+                }
             }
         }
 
@@ -65,7 +68,6 @@ class RopaController
     {
 
         $id = validarId('/admin');
-        $ropa = Ropa::getById($id);
         $ropa = Ropa::getById($id);
         $ropas = Ropa::all();
         $marcas = Marca::all();
@@ -86,7 +88,11 @@ class RopaController
                 if ($_FILES['Imagen']['tmp_name']) {
                     $image->save(IMAGENES_SUBIDAS . $nombre);
                 }
-                $ropa->guardar();
+                $resultado = $ropa->guardar();
+
+                if ($resultado) {
+                    header('Location: ../admin?codeURL=2');
+                }
             }
         }
         $router->render('ropa/actualizar', [

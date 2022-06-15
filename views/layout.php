@@ -4,7 +4,7 @@ if (!isset($_SESSION)) {
     session_start();
 }
 
-$auth = $_SESSION['logueado'] ?? null;
+$auth = $_SESSION['login'] ?? null;
 ?>
 
 <!DOCTYPE html>

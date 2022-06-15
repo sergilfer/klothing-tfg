@@ -13,15 +13,16 @@
                     Más de 25 años de experiencia en el sector textil
                 </blockquote>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. In
-                    consectetur, iusto placeat aliquid quos voluptatem non dolor esse
-                    atque temporibus dignissimos! A amet reiciendis at itaque voluptate.
-                    Alias, sit commodi.
+                    Es una tienda online de moda con prioridades claras como la belleza
+                    y el tallaje para todos los cuerpos. Nos esforzamos por mejorar
+                    constantemente y es por eso por lo que escuchamos la demanda y
+                    sugerencias de nuevos clientes gracias al gran equipo de soporte
+                    del que disponemos.
+
                 </p>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam id
-                    earum aliquid delectus saepe ducimus doloremque itaque ipsum alias
-                    vero omnis dolorem et eum laudantium impedit animi culpa, at sint.
+                    Gracias a nuestra innovación continua en nuestros productos las
+                    estadísticas nos sitúan en lo más alto en ventas online.
                 </p>
             </div>
         </div>
@@ -35,27 +36,29 @@
                 <img src="build/img/iconos/icono1.svg" alt="Icono seguridad" loading="lazy" />
                 <h3>Fiabilidad de Envio</h3>
                 <p>
-                    Possimus, suscipit repudiandae. Autem deserunt aliquid deleniti sit
-                    minus consectetur obcaecati molestiae dolorem natus dolores
-                    reiciendis tempore, explicabo cum nobis laudantium. Voluptates?
+                    En Klothing nos cercioramos de que el producto llegue al destinatario
+                    En perfectas condiciones y con toda la seguridad posible.
                 </p>
             </div>
             <div class="icono">
                 <img src="build/img/iconos/icono2.svg" alt="Icono Precio" loading="lazy" />
                 <h3>Precio Economico</h3>
                 <p>
-                    Possimus, suscipit repudiandae. Autem deserunt aliquid deleniti sit
-                    minus consectetur obcaecati molestiae dolorem natus dolores
-                    reiciendis tempore, explicabo cum nobis laudantium. Voluptates?
+                    Gracias a una exhausta investigación de mercado y un trabajo intenso
+                    en la calidad de nuestros productos, el balance de calidad y precio
+                    ha sido siempre nuestro objetivo, y es por eso que nuestros precios
+                    son los más competentes y difíciles de igualar.
                 </p>
             </div>
             <div class="icono">
                 <img src="build/img/iconos/icono3.svg" alt="Icono Tiempo" loading="lazy" />
                 <h3>Entrega rapida</h3>
                 <p>
-                    Possimus, suscipit repudiandae. Autem deserunt aliquid deleniti sit
-                    minus consectetur obcaecati molestiae dolorem natus dolores
-                    reiciendis tempore, explicabo cum nobis laudantium. Voluptates?
+                    Nuestros envíos destacan por su rapidez. Esto se debe a que disponemos
+                    de una tecnología que facilita la tramitación de pedidos, lo que lleva
+                    a que se preparen los pedidos a más velocidad y se puedan poner en
+                    tránsito antes. Disponemos de opciones de recogida para que se pueda
+                    verificar que poción es más rápida para el cliente.
                 </p>
             </div>
         </div>

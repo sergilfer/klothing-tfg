@@ -32,6 +32,7 @@ class ComposerStaticInit4740f1ca31046d7238f77f1be6248233
         'C' => 
         array (
             'Controllers\\' => 12,
+            'Classes\\' => 8,
         ),
     );
 
@@ -64,6 +65,10 @@ class ComposerStaticInit4740f1ca31046d7238f77f1be6248233
         'Controllers\\' => 
         array (
             0 => __DIR__ . '/../..' . '/controllers',
+        ),
+        'Classes\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/classes',
         ),
     );
 

@@ -41,7 +41,10 @@ class MarcaController
                     mkdir(IMAGENES_SUBIDAS);
                 }
                 $image->save(IMAGENES_SUBIDAS . $nombre);
-                $marca->guardar();
+                $resultado = $marca->guardar();
+                if ($resultado) {
+                    header('Location: ../admin?codeURL=1');
+                }
             }
         }
         $router->render('marca/crear', [
@@ -68,7 +71,10 @@ class MarcaController
                 if ($_FILES['Imagen']['tmp_name']) {
                     $image->save(IMAGENES_SUBIDAS . $nombre);
                 }
-                $marca->guardar();
+                $resultado = $marca->guardar();
+                if ($resultado) {
+                    header('Location: ../admin?codeURL=2');
+                }
             }
         }
 

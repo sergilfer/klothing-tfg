@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 require_once __DIR__ . '/../vendor/autoload.php';
 require_once __DIR__ . './../includes/app.php';
@@ -35,11 +35,26 @@ $router->get('/detalles', [new PaginasController(), 'detalles']);
 $router->get('/contacto', [new PaginasController(), 'contacto']);
 $router->post('/contacto', [new PaginasController(), 'contacto']);
 
-//ZONA DE USUARIOS (LOGIN Y LOGOUT)
+// Iniciar Sesión
 $router->get('/login', [new LoginController(), 'login']);
 $router->post('/login', [new LoginController(), 'login']);
 $router->get('/logout', [new LoginController(), 'logout']);
-$router->post('/register', [new LoginController(), 'register']);
-$router->get('/register', [new LoginController(), 'register']);
 
-$router -> comprobarRutas();
+// Recuperar Password
+$router->get('/olvide', [new LoginController(), 'olvide']);
+$router->post('/olvide', [new LoginController(), 'olvide']);
+$router->get('/recuperar', [new LoginController(), 'recuperar']);
+$router->post('/recuperar', [new LoginController(), 'recuperar']);
+
+// Crear Cuenta
+$router->get('/register', [new LoginController(), 'register']);
+$router->post('/register', [new LoginController(), 'register']);
+
+// Confirmar cuenta
+$router->get('/confirmar-cuenta', [new LoginController(), 'confirmar']);
+
+$router->get('/mensaje', [new LoginController(), 'mensaje']);
+
+
+
+$router->comprobarRutas();

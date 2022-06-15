@@ -8,7 +8,6 @@ class Ropa extends ActiveRecord
     protected static $tabla = 'tiendaropa';
     protected static $column_db = ['Id', 'Genero', 'Talla', 'Color', 'Tipo', 'Marca', 'Stock', 'Descripcion', 'Imagen', 'Precio', 'Titulo'];
 
-
     public $Id;
     public $Genero;
     public $Talla;
