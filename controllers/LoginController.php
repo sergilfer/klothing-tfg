@@ -11,6 +11,7 @@ class LoginController
     public static function login(Router $router)
     {
         $admin = new Usuarios($_POST);
+
         $campos_vacios = $admin->validarLogin();
 
         if (empty($campos_vacios)) {
@@ -37,9 +38,10 @@ class LoginController
                 Usuarios::setVacios('Usuario no encontrado');
             }
         }
-        $campos_vacios = Usuarios::getVacios();
+
         $router->render('auth/login', [
-            'campos_vacios' => $campos_vacios
+            'campos_vacios' => $campos_vacios,
+            'admin' => $admin
 
         ]);
     }

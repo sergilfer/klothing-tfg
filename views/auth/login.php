@@ -12,10 +12,10 @@
             <legend>Email y Password</legend>
 
             <label for="email">E-mail</label>
-            <input type="email" name="Email" placeholder="Introduce un Email" id="email">
+            <input type="email" name="Email" placeholder="Introduce un Email" id="email" value="<?php echo cleanCode($admin -> Email); ?>">
 
             <label for="password">Password</label>
-            <input type="password" name="Password" placeholder="Introduzca su Password" id="password">
+            <input type="password" name="Password" placeholder="Introduzca su Password" id="password" value="">
         </fieldset>
 
         <input type="submit" value="Iniciar Sesion" class="boton boton-verde">

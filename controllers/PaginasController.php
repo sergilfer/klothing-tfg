@@ -95,4 +95,8 @@ class PaginasController
             'mensaje' => $mensaje
         ]);
     }
+
+    public static function compra (Router $router){
+        $router->render('/paginas/compra', []);
+    }
 }

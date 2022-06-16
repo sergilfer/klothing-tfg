@@ -29,6 +29,7 @@ $router->post('/marca/eliminar', [new MarcaController(), 'eliminar']);
 $router->get('/', [new PaginasController(), 'index']);
 $router->get('/nosotros', [new PaginasController(), 'nosotros']);
 $router->get('/seccion', [new PaginasController(), 'seccion']);
+$router->get('/compra', [new PaginasController(), 'compra']);
 $router->get('/anuncio', [new PaginasController(), 'anuncio']);
 $router->get('/marcas', [new PaginasController(), 'marcas']);
 $router->get('/detalles', [new PaginasController(), 'detalles']);

@@ -21,7 +21,7 @@
                     </select>
 
                     <div class="alinear-derecha">
-                        <input type="submit" value="Comprar" class="boton boton-verde">
+                        <a href="/compra" class="boton boton-verde">Comprar</a>
                     </div>
                 </form>
             </div>
