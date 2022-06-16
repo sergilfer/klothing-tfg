@@ -10,7 +10,7 @@
     </div>
 
     <main class="contenedor seccion">
-        <h1>Conoce más sobre nosotros</h1>
+        <h1 data-cy='heading-index'>Conoce más sobre nosotros</h1>
         <div class="contenido-nosotros">
             <div class="imagen">
                 <picture>

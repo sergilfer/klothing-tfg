@@ -1,5 +1,5 @@
 <main class="contenedor seccion contenido-centrado">
-    <h1><?php echo $ropa->Titulo; ?></h1>
+    <h1 data-cy='titulo-ropa'><?php echo $ropa->Titulo; ?></h1>
     <div class="contenido-ropa">
         <picture>
             <img loading="lazy" src="imagenes_subidas/<?php echo $ropa->Imagen; ?>" alt="anuncio" />
@@ -25,8 +25,6 @@
                     </div>
                 </form>
             </div>
-
-
         </div>
     </div>
 </main>
