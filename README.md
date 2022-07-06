@@ -1,6 +1,6 @@
 # klothing-tfg
 
-#Como levantar la pagina web
+Como levantar la pagina web
 
 Tras la descarga de los ficheros, deberas abrir la terminal de VSCode y realizar los siguientes comandos para poder empezar a programar
 
@@ -8,4 +8,6 @@ Tras la descarga de los ficheros, deberas abrir la terminal de VSCode y realizar
 -   composer install
 -   composer update
 
-- Para iniciar el servidor php -S localhost:3000
+- Para iniciar el servidor primero debemos acceder a la carpeta public (cd public) desde la terminal de VSCode
+- Posteriormente, iniciar el servidor PHP con el comando -> php -S localhost:3000
+- Ahora podrá visualizar la pagina web desde su navegador con la url: "localhost:3000"
