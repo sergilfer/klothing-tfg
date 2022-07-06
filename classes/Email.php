@@ -11,12 +11,12 @@ class Email
     {
         $mail = new PHPMailer();
         $mail->isSMTP();
-        $mail->Host = 'smtp.gmail.com';
+      //  $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
-        $mail->Username = 'klothing.tfg@gmail.com';
-        $mail->Password = 'sbthbghsjmwpysrl';
+       // $mail->Username = 'klothing.tfg@gmail.com';
+       // $mail->Password = 'sbthbghsjmwpysrl';
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-        $mail->Port = 465;
+      //  $mail->Port = 465;
         $mail->isHTML(true);
         $mail->CharSet = 'UTF-8';
 
